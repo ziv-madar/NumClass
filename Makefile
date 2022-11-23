@@ -1,8 +1,9 @@
-LOOP_DEPS=basicClassification.o advancedClassificationLoop.o utils.o
-RECUR_DEPS=basicClassification.o advancedClassificationRecursion.o utils.o
+LOOP_DEPS=basicClassification.o advancedClassificationLoop.o
+RECUR_DEPS=basicClassification.o advancedClassificationRecursion.o
 COMPILE_A=ar rcs $@ $^
 COMPILE_SO=gcc $^ -shared -o $@
 EXECUTABLES=mains maindloop maindrec
+
 
 %.o: %.c
 	gcc -Wall -fPIC -c $< -o $@
@@ -29,4 +30,4 @@ maindrec: main.o libclassrec.so
 clean:
 	rm -f *.a *.o *.so $(EXECUTABLES)
 
-all: $(EXECUTABLES)
+all: $(EXECUTABLES) loops
