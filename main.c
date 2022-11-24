@@ -2,9 +2,14 @@
 #include "NumClass.h"
 
 int main() {
+    
+    /*get 2 num from user*/
     int from, to, i;
     scanf("%d %d", &from, &to);
-
+    
+    /*
+    print the result for all the function to number betwin the 2 number we get from user
+    */
     printf("The Armstrong numbers are:");
     for (i = from; i <= to; i++) if (isArmstrong(i)) printf(" %d", i);
     printf("\n");
